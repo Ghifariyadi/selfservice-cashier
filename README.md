@@ -1,1 +1,1 @@
-# selfservice-cashier
+# Selfservice-cashier
