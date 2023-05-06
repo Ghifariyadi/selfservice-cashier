@@ -219,7 +219,7 @@ def hitung_total_harga():
     diskon = 0
 
     # hitung diskon berdasarkan total harga barang
-    diskon = 0.1 if total_harga > 500000 else 0.08 if total_harga > 300000 else 0.05 if total_harga > 200000 else 0
+    diskon = 0.07 if total_harga > 500000 else 0.06 if total_harga > 300000 else 0.05 if total_harga > 200000 else 0
 
     print(Fore.YELLOW + "YOUR SHOPPING CART\n" + Style.RESET_ALL)
     print(tabulate.tabulate(list_belanja, headers='keys', tablefmt='grid'))
