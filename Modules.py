@@ -240,32 +240,3 @@ def hitung_total_harga():
     print(f"\n{Fore.YELLOW}Harga setelah diskon: Rp. {harga_setelah_diskon_formatted}{Style.RESET_ALL}\n")
 
 
-#7. Check out
-
-def check_out():
-
-    if not list_belanja:
-        print(colored("Tidak ada item dalam keranjang belanjaan.", "red"))
-        return
-    total_harga = 0
-    for item in list_belanja:
-        total_harga += item['harga'] * item['jumlah']
-    
-    diskon = 0
-
-    # hitung diskon berdasarkan total harga barang
-    diskon = 0.07 if total_harga > 500000 else 0.06 if total_harga > 300000 else 0.05 if total_harga > 200000 else 0
-
-    # Hitung jumlah diskon dan harga dengan diskon
-    diskon_jumlah = total_harga * diskon
-    harga_diskon = total_harga - diskon_jumlah
-
-    # Konversi total harga, jumlah diskon, dan harga setelah diskon menjadi Rupiah
-    locale.setlocale(locale.LC_ALL, '')
-    total_harga = locale.currency(total_harga, grouping=True, symbol=False)
-    diskon_jumlah = locale.currency(diskon_jumlah, grouping=True, symbol=False)
-    harga_diskon = locale.currency(harga_diskon, grouping=True, symbol=False)
-
-    # Tampilkan total harga, diskon, harga dengan diskon
-    print(f"\nTotal Harga: Rp {total_harga}")
-    print(colored(f"\nHarga setelah Diskon: Rp {harga_diskon}","yellow"))
